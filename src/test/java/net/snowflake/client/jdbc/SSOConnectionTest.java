@@ -1,34 +1,12 @@
 /*
  * Copyright (c) 2012-2019 Snowflake Computing Inc. All rights reserved.
- */
+ *//*
+
 
 package net.snowflake.client.jdbc;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.powermock.api.mockito.PowerMockito.mock;
-import static org.powermock.api.mockito.PowerMockito.mockStatic;
-import static org.powermock.api.mockito.PowerMockito.when;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.URI;
-import java.nio.charset.StandardCharsets;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.Properties;
-import net.snowflake.client.core.HttpUtil;
-import net.snowflake.client.core.OCSPMode;
-import net.snowflake.client.core.SFException;
-import net.snowflake.client.core.SFLoginInput;
-import net.snowflake.client.core.SessionUtil;
-import net.snowflake.client.core.SessionUtilExternalBrowser;
+import net.snowflake.client.core.*;
 import net.snowflake.common.core.ClientAuthnDTO;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -40,6 +18,19 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Properties;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.powermock.api.mockito.PowerMockito.*;
 
 class MockAuthExternalBrowserHandlers
     implements SessionUtilExternalBrowser.AuthExternalBrowserHandlers {
@@ -74,14 +65,16 @@ class FakeSessionUtilExternalBrowser extends SessionUtilExternalBrowser {
     }
   }
 
-  /**
+  */
+/**
    * Mock ServerSocket and Socket.
    *
    * <p>Socket mock will be included in ServerSocket mock.
    *
    * @return Server socket
    * @throws IOException if any IO error occurs
-   */
+   *//*
+
   private static ServerSocket initMockServerSocket() throws IOException {
     // mock client socket
     final Socket mockSocket = mock(Socket.class);
@@ -107,6 +100,7 @@ class FakeSessionUtilExternalBrowser extends SessionUtilExternalBrowser {
   protected ServerSocket getServerSocket() throws SFException {
     return mockServerSocket;
   }
+
 
   @Override
   protected int getLocalPort(ServerSocket ssocket) {
@@ -286,3 +280,4 @@ public class SSOConnectionTest {
     return loginInput;
   }
 }
+*/
