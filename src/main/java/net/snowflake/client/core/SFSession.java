@@ -503,7 +503,9 @@ public class SFSession {
    */
   boolean isUsernamePasswordMFAAuthenticator() {
     String authenticator = (String) connectionPropertiesMap.get(SFSessionProperty.AUTHENTICATOR);
-    return ClientAuthnDTO.AuthenticatorType.USERNAME_PASSWORD_MFA.name().equalsIgnoreCase(authenticator);
+    return ClientAuthnDTO.AuthenticatorType.USERNAME_PASSWORD_MFA
+        .name()
+        .equalsIgnoreCase(authenticator);
   }
 
   /**
@@ -706,7 +708,9 @@ public class SFSession {
       }
     }
 
-    if (isSnowflakeAuthenticator() || isOKTAAuthenticator() || isUsernamePasswordMFAAuthenticator()) {
+    if (isSnowflakeAuthenticator()
+        || isOKTAAuthenticator()
+        || isUsernamePasswordMFAAuthenticator()) {
       // userName and password are expected for both Snowflake and Okta.
       String userName = (String) connectionPropertiesMap.get(SFSessionProperty.USER);
       if (Strings.isNullOrEmpty(userName)) {

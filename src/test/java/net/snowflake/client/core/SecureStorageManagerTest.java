@@ -4,17 +4,16 @@
 
 package net.snowflake.client.core;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.Test;
 
 class MockAdvapi32Lib implements SecureStorageWindowsManager.Advapi32Lib {
   @Override
